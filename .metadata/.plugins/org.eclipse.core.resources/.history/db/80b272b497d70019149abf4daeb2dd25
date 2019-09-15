@@ -1,0 +1,13 @@
+package com.lwx.eurekaserver;
+
+
+
+@SpringBootApplication
+@EnableEurekaServer
+public class application {
+
+    public static void main(String[] args) {
+        new SpringApplicationBuilder(application.class).web(true).run(args);
+    }
+}
+

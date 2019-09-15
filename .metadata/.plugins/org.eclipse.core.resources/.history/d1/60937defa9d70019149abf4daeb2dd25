@@ -1,0 +1,58 @@
+server:
+  port: 9001    #端口号
+
+eureka:
+  client:
+    serviceUrl:   #注册中心地址
+      defaultZone: http://localhost:9527/eureka/
+spring:
+  application:
+    name: cache-service   #在注册中心显示的名字
+  
+  mail:
+    host: smtp.163.com
+    username: 631507429@qq.com
+    password: goodjob2016                   # 填写客户端的授权码
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+
+
+  datasource:
+    url: jdbc:mysql://192.168.1.128:3306/test_mail?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: Abcd1@34
+    driver-class-name: com.mysql.jdbc.Driver
+    initialSize: 5
+    minIdle: 5
+    maxActive: 10		
+  data:
+    mongodb:
+      host: 127.0.0.1
+      port: 27017
+      database: googleSpider
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.lwx.mybatis.entity
+
+#模板引擎配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: html
+    encoding: UTF-8
+    cache: false
+    servlet:
+      content-type: text/html
+  
+  #静态文件配置
+  resource:
+    static-location: classpath:/static,classpath:/META-INF/resources,classpath:/templates/
+  
+  
+
